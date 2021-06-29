@@ -19,7 +19,7 @@ const UsersList = ({users,setUsers,setedituser,edituser,setButton}) =>
  const handleDelete = ({_id}) =>
  {
 
-     axios.delete(`http://localhost:8080/user/delete/${_id}`, {
+     axios.delete(`https://jobregisterationserver.herokuapp.com/user/delete/${_id}`, {
   
      headers: {
        "Content-Type": "application/json",
