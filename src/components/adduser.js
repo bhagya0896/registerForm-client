@@ -59,7 +59,7 @@ export default function AddUser() {
      const newUsers= users.map((user)=>
     user._id === _id ? {_id,fullname,mobile,jobtype,preflocation,email,dob }:user
      );
-     axios.put(`http://localhost:8080/user/update/${_id}`,{updatedUser}, {
+     axios.put(`https://jobregisterationserver.herokuapp.com/user/update/${_id}`,{updatedUser}, {
      headers: {
        "Content-Type": "application/json",
      },
@@ -97,7 +97,7 @@ export default function AddUser() {
   // get Users
  const fetchUsers=()=>{
         return axios
-        .get(`http://localhost:8080/users`,{
+        .get(`https://jobregisterationserver.herokuapp.com/users`,{
             headers:{
                 "Content-Type": "application/json",
             }
@@ -144,7 +144,7 @@ export default function AddUser() {
         formData.append("dob",dob);
       
         return axios
-        .post(`http://localhost:8080/user/register`,formData)
+        .post(`https://jobregisterationserver.herokuapp.com/user/register`,formData)
         .then((res)=>
         {
             let data = res.data;
